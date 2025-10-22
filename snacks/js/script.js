@@ -21,24 +21,76 @@ const cars = [
   { brand: 'Peugeot', model: '208', fuel: 'metano' }
 ]
 
-const benzina_auto = cars.filter((type)=> {
-    if (type.fuel === 'benzina') {
-      return true
-    } return false
-  }) 
-  console.log(benzina_auto);
-  
-const diesel_auto = cars.filter((type)=> {
-    if (type.fuel === 'diesel') {
-      return true
-    } return false
-  }) 
-  console.log(diesel_auto);
+/*---------------FILTER---------------*/
 
-const other_auto = cars.filter((type)=> {
-    if ((type.fuel !== 'diesel') && (type.fuel !== 'benzina')) {
-      return true
-    } return false
-  }) 
-  console.log(other_auto);
+const benzina_auto = cars.filter((type) => {
+  if (type.fuel === 'benzina') {
+    return true
+  } return false
+})
+console.log(benzina_auto);
+
+const diesel_auto = cars.filter((type) => {
+  if (type.fuel === 'diesel') {
+    return true
+  } return false
+})
+console.log(diesel_auto);
+
+const other_auto = cars.filter((type) => {
+  if ((type.fuel !== 'diesel') && (type.fuel !== 'benzina')) {
+    return true
+  } return false
+})
+console.log(other_auto);
+
+/*---------------FOR EACH---------------*/
+
+cars.forEach(function (car) {
+  if (car.fuel === 'diesel')
+    console.log(car);
+})
+
+cars.forEach(car => {
+    if (car.fuel === 'benzina')
+    console.log(car);
   
+});
+
+cars.forEach(other => {
+    if ((other.fuel !== 'diesel') && (other.fuel !== 'benzina')) {
+      console.log(other);
+      
+    }
+})
+
+
+/*---------------FOR---------------*/
+
+const benza = []
+for (let i = 0; i < cars.length; i++) {
+  const car = cars[i];
+  if (car.fuel === 'benzina') {
+    benza.push(car)
+  }
+}
+console.log(benza);
+
+
+const gasolj = []
+for (let i = 0; i < cars.length; i++) {
+  const car = cars[i];
+  if (car.fuel === 'diesel') {
+    gasolj.push(car)
+  }
+}
+console.log(gasolj);
+
+const other = []
+for (let i = 0; i < cars.length; i++) {
+  const car = cars[i];
+  if (car.fuel !== 'diesel' && car.fuel !== 'benzina') {
+    other.push(car)
+  }
+}
+console.log(other);
